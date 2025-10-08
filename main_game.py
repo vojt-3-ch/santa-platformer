@@ -155,15 +155,22 @@ class Enemy:
         self.patrol_min = patrol_min_x
         self.patrol_max = patrol_max_x
         self.speed = speed
+        self.facing_right = True
+        self.texture = get_texture('enemy', (w, h))
+
 
     def update(self):
         self.rect.x += self.vx
+
         if self.rect.x < self.patrol_min:
             self.rect.x = self.patrol_min
             self.vx = abs(self.speed)
+            self.facing_right = True
         elif self.rect.x > self.patrol_max:
             self.rect.x = self.patrol_max
             self.vx = -abs(self.speed)
+            self.facing_right = False
+
 
 class LevelManager:
     def __init__(self, levels_data):
@@ -531,8 +538,11 @@ while running:
 
     # draw enemies
     for e in level_manager.enemies:
-        surf = get_texture('enemy', (e.rect.width, e.rect.height))
+        surf = e.texture
+        if not e.facing_right:
+            surf = pygame.transform.flip(surf, True, False)
         screen.blit(surf, (e.rect.x - camera_x, e.rect.y - camera_y))
+
 
     # draw goal (tree)
     tree_texture_name = 'tree1' if level_manager.completed else 'tree'
