@@ -106,7 +106,7 @@ def draw_game_over(screen, screen_width, screen_height):
         screen_height (int): Height of the screen
     """
     screen.fill(GAME_OVER_BACKGROUND_COLOR)
-    text = big_font.render("You saved Christmas! 🎅🎉", True, COLOR_WHITE)
+    text = big_font.render("You saved Christmas!", True, COLOR_WHITE)
     screen.blit(text, (screen_width//2 - text.get_width()//2,
                       screen_height//2 - text.get_height()//2))
 
