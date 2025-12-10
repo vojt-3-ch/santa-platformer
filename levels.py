@@ -95,7 +95,7 @@ LEVELS = [
         powerups=[
             {"rect": (750, 310, 24, 24), "type": "invincibility"},
         ],
-        background_name="bckg1"
+        background_name="bckg3"
     ),
 	
     create_level_data(
@@ -126,7 +126,7 @@ LEVELS = [
             {"rect": (480, 430, 24, 24), "type": "speed_boost"},
             {"rect": (950, 380, 24, 24), "type": "double_jump"},
         ],
-        background_name="bckg1"
+        background_name="bckg4"
     ),
 
     create_level_data(
@@ -163,7 +163,7 @@ LEVELS = [
             {"rect": (1600, 100, 24, 24), "type": "invincibility"},
             {"rect": (1263, 126, 24, 24), "type": "double_jump"},
         ],
-        background_name="bckg2"
+        background_name="bckg5"
     )
 ]
 
